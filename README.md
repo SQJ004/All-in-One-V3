@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  ![Discord](https://img.shields.io/badge/Discord-Bot-5865F2?logo=discord)
+  ![Discord]( https://img.shields.io/badge/Discord-Bot-5865F2?logo=discord )
   ![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-yellow?logo=javascript)
   ![Status](https://img.shields.io/badge/Status-Active-success)
   ![License](https://img.shields.io/badge/License-MIT-blue)
