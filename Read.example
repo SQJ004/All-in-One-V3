@@ -1,0 +1,47 @@
+# Only DISCORD_TOKEN is required. Copy this file to .env and fill it in.
+
+# Developer Portal > your application > Bot > Reset Token
+# On the same page, turn on the Server Members and Message Content intents.
+DISCORD_TOKEN=
+
+# ---- Website (optional) ----
+# Developer Portal > OAuth2 > Client Secret. Setting this turns the website on.
+# Also add <DASHBOARD_URL>/auth/callback as a redirect on that page.
+DISCORD_CLIENT_SECRET=
+DASHBOARD_PORT=3000
+DASHBOARD_URL=http://localhost:3000
+# Your Discord server invite, for the Discord server buttons on the homepage.
+SUPPORT_URL=
+# Set to false to run only the bot even when the secret above is set.
+# DASHBOARD_ENABLED=false
+
+# ---- Music ----
+# /play needs no account or API key: search uses Audius and lyrics use LRCLIB, both open services.
+# Optional, for /youtube search and YouTube links in /play: a YouTube Data API v3 key from
+# Google Cloud Console. Without it, Watch Together still works. Keep this key private.
+YOUTUBE_API_KEY=
+# Optional, for Spotify links in /play: from an app at developer.spotify.com/dashboard.
+# Spotify requires the app owner to have active Premium.
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+# Seconds before ZYTHERON leaves voice when nothing is playing or nobody is listening.
+MUSIC_IDLE_TIMEOUT_SECONDS=300
+
+# ---- Optional ----
+# Registers slash commands instantly in one server while testing. Without it they are global.
+DEV_GUILD_ID=
+# ZYTHERON will not overwrite slash commands it did not register. Set to true only if you
+# want to delete another bot's commands on this application and replace them with ZYTHERON's.
+REPLACE_COMMANDS=false
+# ZYTHERON answers leftover commands from another bot by pointing to the new command.
+# Set to true if that other bot is still running and should answer them itself.
+IGNORE_FOREIGN_COMMANDS=false
+# Where settings and data are saved as JSON files.
+DATA_DIR=./data
+LOG_LEVEL=info
+# Signs nothing you need to manage: one is generated in the data folder if this is empty.
+SESSION_SECRET=
+# Set to 1 when running behind one reverse proxy.
+TRUST_PROXY=0
+# A list of scam domains to load every 6 hours: JSON array, or one domain per line.
+PHISHING_FEED_URL=

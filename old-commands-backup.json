@@ -1,0 +1,3252 @@
+{
+  "savedAt": "2026-11-05T22:46:12.456Z",
+  "applicationId": "1565181939458113547",
+  "commands": [
+    {
+      "id": "1567629257683767316",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547028",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "automod",
+      "description": "Configure auto-moderation",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "status",
+          "description": "Show every filter and its settings"
+        },
+        {
+          "type": 1,
+          "name": "filter",
+          "description": "Turn a filter on/off and choose its punishment",
+          "options": [
+            {
+              "type": 3,
+              "name": "name",
+              "description": "Filter",
+              "required": true,
+              "choices": [
+                {
+                  "name": "Anti-spam",
+                  "value": "spam"
+                },
+                {
+                  "name": "Anti-flood",
+                  "value": "flood"
+                },
+                {
+                  "name": "Anti-duplicate",
+                  "value": "duplicate"
+                },
+                {
+                  "name": "Mass mentions",
+                  "value": "mentions"
+                },
+                {
+                  "name": "Invite links",
+                  "value": "invites"
+                },
+                {
+                  "name": "Links",
+                  "value": "links"
+                },
+                {
+                  "name": "Bad words",
+                  "value": "badwords"
+                },
+                {
+                  "name": "Caps",
+                  "value": "caps"
+                },
+                {
+                  "name": "Emoji spam",
+                  "value": "emoji"
+                },
+                {
+                  "name": "New accounts",
+                  "value": "newaccount"
+                }
+              ]
+            },
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "action",
+              "description": "Punishment",
+              "choices": [
+                {
+                  "name": "Delete the message",
+                  "value": "delete"
+                },
+                {
+                  "name": "Delete + warn",
+                  "value": "warn"
+                },
+                {
+                  "name": "Delete + timeout",
+                  "value": "timeout"
+                },
+                {
+                  "name": "Delete + kick",
+                  "value": "kick"
+                },
+                {
+                  "name": "Delete + ban",
+                  "value": "ban"
+                }
+              ]
+            },
+            {
+              "type": 4,
+              "name": "threshold",
+              "description": "Limit (messages, lines, mentions, %, emojis or account age in days)",
+              "min_value": 1,
+              "max_value": 1000
+            },
+            {
+              "type": 4,
+              "name": "seconds",
+              "description": "Anti-spam time window in seconds (2-60)",
+              "min_value": 2,
+              "max_value": 60
+            },
+            {
+              "type": 4,
+              "name": "timeout_minutes",
+              "description": "Timeout length in minutes (1-40320)",
+              "min_value": 1,
+              "max_value": 40320
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "words",
+          "description": "Add or remove blocked words",
+          "options": [
+            {
+              "type": 3,
+              "name": "add",
+              "description": "Comma-separated words to block",
+              "max_length": 1000
+            },
+            {
+              "type": 3,
+              "name": "remove",
+              "description": "Comma-separated words to unblock",
+              "max_length": 1000
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "domains",
+          "description": "Link domains that are always allowed",
+          "options": [
+            {
+              "type": 3,
+              "name": "add",
+              "description": "Comma-separated, e.g. youtube.com, tenor.com",
+              "max_length": 1000
+            },
+            {
+              "type": 3,
+              "name": "remove",
+              "description": "Comma-separated domains to stop allowing",
+              "max_length": 1000
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "exempt",
+          "description": "Exempt (or stop exempting) a role or channel",
+          "options": [
+            {
+              "type": 3,
+              "name": "mode",
+              "description": "Add or remove",
+              "required": true,
+              "choices": [
+                {
+                  "name": "Add",
+                  "value": "add"
+                },
+                {
+                  "name": "Remove",
+                  "value": "remove"
+                }
+              ]
+            },
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role"
+            },
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel or category",
+              "channel_types": [
+                0,
+                2,
+                4,
+                5,
+                15
+              ]
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767317",
+      "application_id": "1565181939458113547",
+      "version": "1567653185969987584",
+      "default_member_permissions": "268435456",
+      "type": 1,
+      "name": "autorole",
+      "description": "Roles given automatically when someone joins",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "add",
+          "description": "Add a join role",
+          "options": [
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "for",
+              "description": "Who gets it (default: members)",
+              "choices": [
+                {
+                  "name": "Members (humans)",
+                  "value": "humans"
+                },
+                {
+                  "name": "Bots",
+                  "value": "bots"
+                },
+                {
+                  "name": "Everyone",
+                  "value": "all"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Remove a join role",
+          "options": [
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "list",
+          "description": "Show the join roles"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767318",
+      "application_id": "1565181939458113547",
+      "version": "1567629258912829585",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "avatar",
+      "description": "Show a user's avatar",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "User (default: you)"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767319",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421725",
+      "default_member_permissions": "4",
+      "type": 1,
+      "name": "ban",
+      "description": "Ban a user from the server (asks for confirmation)",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "User to ban — can be someone who already left",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason for the ban",
+          "max_length": 400
+        },
+        {
+          "type": 4,
+          "name": "delete_days",
+          "description": "Delete their messages from the last 0-7 days",
+          "min_value": 0,
+          "max_value": 7
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767320",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421726",
+      "default_member_permissions": "8192",
+      "type": 1,
+      "name": "clear",
+      "description": "Delete recent messages in this channel",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 4,
+          "name": "amount",
+          "description": "How many (1-100)",
+          "required": true,
+          "min_value": 1,
+          "max_value": 100
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767321",
+      "application_id": "1565181939458113547",
+      "version": "1567653185969987585",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "goodbye",
+      "description": "Configure goodbye messages",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "settings",
+          "description": "Show the goodbye settings"
+        },
+        {
+          "type": 1,
+          "name": "toggle",
+          "description": "Turn goodbye messages on or off",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "channel",
+          "description": "Channel for goodbye messages (also turns them on)",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel",
+              "required": true,
+              "channel_types": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "message",
+          "description": "Change the goodbye text",
+          "options": [
+            {
+              "type": 3,
+              "name": "text",
+              "description": "Variables: {user} {username} {userId} {server} {memberCount}",
+              "required": true,
+              "max_length": 1500
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "embed",
+          "description": "Show the message inside an embed",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "color",
+              "description": "Embed / card color, e.g. #7c5cff",
+              "max_length": 7
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "image",
+          "description": "Add a generated image card with the avatar",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "background",
+              "description": "Background image link (https://…, 1024×450 works best) or \"none\"",
+              "max_length": 500
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "test",
+          "description": "Send a test goodbye message for yourself"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767322",
+      "application_id": "1565181939458113547",
+      "version": "1567631882936516608",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "help",
+      "description": "List all commands, or show how to use one",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 3,
+          "name": "command",
+          "description": "Command name, e.g. ban",
+          "max_length": 32
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767323",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578307",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "invite",
+      "description": "Get the link to add the bot to a server",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767324",
+      "application_id": "1565181939458113547",
+      "version": "1567629258912829591",
+      "default_member_permissions": "2",
+      "type": 1,
+      "name": "kick",
+      "description": "Kick a member from the server",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member to kick",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629257683767325",
+      "application_id": "1565181939458113547",
+      "version": "1567629258912829592",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "leaderboard",
+      "description": "Show the most active members",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 4,
+          "name": "page",
+          "description": "Page number",
+          "min_value": 1
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219015",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421728",
+      "default_member_permissions": "16",
+      "type": 1,
+      "name": "lock",
+      "description": "Stop members from sending messages in a channel",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel to lock (default: this one)",
+          "channel_types": [
+            0,
+            2,
+            5,
+            15
+          ]
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219016",
+      "application_id": "1565181939458113547",
+      "version": "1567653185315676290",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "logs",
+      "description": "Choose where logs are sent",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "set",
+          "description": "Send a log category (or all) to a channel",
+          "options": [
+            {
+              "type": 3,
+              "name": "category",
+              "description": "What to log",
+              "required": true,
+              "choices": [
+                {
+                  "name": "All categories",
+                  "value": "all"
+                },
+                {
+                  "name": "Messages",
+                  "value": "messages"
+                },
+                {
+                  "name": "Members",
+                  "value": "members"
+                },
+                {
+                  "name": "Moderation",
+                  "value": "moderation"
+                },
+                {
+                  "name": "Automod",
+                  "value": "automod"
+                },
+                {
+                  "name": "Roles",
+                  "value": "roles"
+                },
+                {
+                  "name": "Channels",
+                  "value": "channels"
+                },
+                {
+                  "name": "Voice",
+                  "value": "voice"
+                },
+                {
+                  "name": "Invites",
+                  "value": "invites"
+                },
+                {
+                  "name": "Server",
+                  "value": "server"
+                },
+                {
+                  "name": "Tickets",
+                  "value": "tickets"
+                },
+                {
+                  "name": "Suggestions",
+                  "value": "suggestions"
+                }
+              ]
+            },
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Log channel",
+              "required": true,
+              "channel_types": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "disable",
+          "description": "Stop a log category (or all)",
+          "options": [
+            {
+              "type": 3,
+              "name": "category",
+              "description": "What to stop",
+              "required": true,
+              "choices": [
+                {
+                  "name": "All categories",
+                  "value": "all"
+                },
+                {
+                  "name": "Messages",
+                  "value": "messages"
+                },
+                {
+                  "name": "Members",
+                  "value": "members"
+                },
+                {
+                  "name": "Moderation",
+                  "value": "moderation"
+                },
+                {
+                  "name": "Automod",
+                  "value": "automod"
+                },
+                {
+                  "name": "Roles",
+                  "value": "roles"
+                },
+                {
+                  "name": "Channels",
+                  "value": "channels"
+                },
+                {
+                  "name": "Voice",
+                  "value": "voice"
+                },
+                {
+                  "name": "Invites",
+                  "value": "invites"
+                },
+                {
+                  "name": "Server",
+                  "value": "server"
+                },
+                {
+                  "name": "Tickets",
+                  "value": "tickets"
+                },
+                {
+                  "name": "Suggestions",
+                  "value": "suggestions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "ignore",
+          "description": "Don't log message events from a channel (toggle)",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel",
+              "required": true,
+              "channel_types": [
+                0,
+                2,
+                5,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "status",
+          "description": "Show the log channels"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219017",
+      "application_id": "1565181939458113547",
+      "version": "1567629259080470601",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "ping",
+      "description": "Check the bot's latency",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219018",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421723",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "rank",
+      "description": "Show your rank card (or someone else's)",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219019",
+      "application_id": "1565181939458113547",
+      "version": "1567629259080470603",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "serverinfo",
+      "description": "Show information about this server",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219021",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578305",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "ticket",
+      "description": "Support tickets",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "setup",
+          "description": "Post the ticket panel (admins)",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Where to post the panel",
+              "required": true,
+              "channel_types": [
+                0
+              ]
+            },
+            {
+              "type": 7,
+              "name": "category",
+              "description": "Category for ticket channels",
+              "channel_types": [
+                4
+              ]
+            },
+            {
+              "type": 8,
+              "name": "support_role",
+              "description": "Staff role that can see and manage tickets"
+            },
+            {
+              "type": 7,
+              "name": "log_channel",
+              "description": "Channel for ticket logs and transcripts",
+              "channel_types": [
+                0
+              ]
+            },
+            {
+              "type": 4,
+              "name": "max_open",
+              "description": "Open tickets allowed per member (1-5, default 1)",
+              "min_value": 1,
+              "max_value": 5
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "type-add",
+          "description": "Add a ticket type (a button on the panel, max 5) (admins)",
+          "options": [
+            {
+              "type": 3,
+              "name": "name",
+              "description": "Button label, e.g. Report",
+              "required": true,
+              "max_length": 40
+            },
+            {
+              "type": 3,
+              "name": "emoji",
+              "description": "Emoji, e.g. 🚨",
+              "max_length": 64
+            },
+            {
+              "type": 3,
+              "name": "description",
+              "description": "Short description",
+              "max_length": 100
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "type-remove",
+          "description": "Remove a ticket type (admins)",
+          "options": [
+            {
+              "type": 3,
+              "name": "name",
+              "description": "Button label",
+              "required": true,
+              "max_length": 40
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "message",
+          "description": "Message shown when a ticket opens (admins)",
+          "options": [
+            {
+              "type": 3,
+              "name": "text",
+              "description": "Variables: {user} {username} {server}",
+              "required": true,
+              "max_length": 1500
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "settings",
+          "description": "Show the ticket settings"
+        },
+        {
+          "type": 1,
+          "name": "close",
+          "description": "Close this ticket"
+        },
+        {
+          "type": 1,
+          "name": "claim",
+          "description": "Claim this ticket (staff)"
+        },
+        {
+          "type": 1,
+          "name": "reopen",
+          "description": "Reopen this closed ticket (staff)"
+        },
+        {
+          "type": 1,
+          "name": "delete",
+          "description": "Delete this ticket channel (staff)"
+        },
+        {
+          "type": 1,
+          "name": "add",
+          "description": "Add a member to this ticket",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Remove a member from this ticket (staff)",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "rename",
+          "description": "Rename this ticket (staff)",
+          "options": [
+            {
+              "type": 3,
+              "name": "name",
+              "description": "New name",
+              "required": true,
+              "max_length": 90
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219022",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763740",
+      "default_member_permissions": "1099511627776",
+      "type": 1,
+      "name": "timeout",
+      "description": "Timeout (mute) a member",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "duration",
+          "description": "e.g. 10m, 2h, 1d, 1h30m (max 28d)",
+          "required": true,
+          "max_length": 20
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258187219023",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763741",
+      "default_member_permissions": "4",
+      "type": 1,
+      "name": "unban",
+      "description": "Unban a user by ID",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 3,
+          "name": "user_id",
+          "description": "ID of the banned user",
+          "required": true,
+          "autocomplete": true,
+          "max_length": 25
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258560639039",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763743",
+      "default_member_permissions": "16",
+      "type": 1,
+      "name": "unlock",
+      "description": "Let members send messages in a locked channel again",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel to unlock (default: this one)",
+          "channel_types": [
+            0,
+            2,
+            5,
+            15
+          ]
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258560639042",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578300",
+      "default_member_permissions": "1099511627776",
+      "type": 1,
+      "name": "untimeout",
+      "description": "Remove a timeout",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258560639044",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578309",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "userinfo",
+      "description": "Information about a member",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member (default: you)"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258560639046",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578301",
+      "default_member_permissions": "1099511627776",
+      "type": 1,
+      "name": "warn",
+      "description": "Warn a member",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "required": true,
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258560639047",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578302",
+      "default_member_permissions": "1099511627776",
+      "type": 1,
+      "name": "warnings",
+      "description": "View or remove warnings",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "list",
+          "description": "Show a member's warnings",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Remove one warning by its number",
+          "options": [
+            {
+              "type": 4,
+              "name": "id",
+              "description": "Warning number from /warnings list",
+              "required": true,
+              "min_value": 1
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "clear",
+          "description": "Remove all warnings of a member",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567629258560639048",
+      "application_id": "1565181939458113547",
+      "version": "1567653185969987586",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "welcome",
+      "description": "Configure welcome messages",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "settings",
+          "description": "Show the welcome settings"
+        },
+        {
+          "type": 1,
+          "name": "toggle",
+          "description": "Turn welcome messages on or off",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "channel",
+          "description": "Channel for welcome messages (also turns them on)",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel",
+              "required": true,
+              "channel_types": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "message",
+          "description": "Change the welcome text",
+          "options": [
+            {
+              "type": 3,
+              "name": "text",
+              "description": "Variables: {user} {username} {userId} {server} {memberCount}",
+              "required": true,
+              "max_length": 1500
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "embed",
+          "description": "Show the message inside an embed",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "color",
+              "description": "Embed / card color, e.g. #7c5cff",
+              "max_length": 7
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "image",
+          "description": "Add a generated image card with the avatar",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "background",
+              "description": "Background image link (https://…, 1024×450 works best) or \"none\"",
+              "max_length": 500
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "test",
+          "description": "Send a test welcome message for yourself"
+        },
+        {
+          "type": 1,
+          "name": "dm",
+          "description": "Also send new members a private message",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "text",
+              "description": "DM text. Variables: {user} {username} {userId} {server} {memberCount}",
+              "max_length": 1500
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184481005778",
+      "application_id": "1565181939458113547",
+      "version": "1567653185315676285",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "announce",
+      "description": "Send or schedule announcements",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "schedule",
+          "description": "Schedule a message (optionally repeating)",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel",
+              "required": true,
+              "channel_types": [
+                0,
+                5
+              ]
+            },
+            {
+              "type": 3,
+              "name": "in",
+              "description": "When to send it, e.g. 10m, 2h, 1d",
+              "required": true,
+              "max_length": 20
+            },
+            {
+              "type": 3,
+              "name": "message",
+              "description": "The message (mentions like @everyone work)",
+              "required": true,
+              "max_length": 2000
+            },
+            {
+              "type": 3,
+              "name": "repeat",
+              "description": "Repeat every… e.g. 1d, 1w (minimum 1h)",
+              "max_length": 20
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "list",
+          "description": "Scheduled announcements"
+        },
+        {
+          "type": 1,
+          "name": "cancel",
+          "description": "Cancel a scheduled announcement",
+          "options": [
+            {
+              "type": 4,
+              "name": "id",
+              "description": "ID from /announce list",
+              "required": true,
+              "min_value": 1
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184481005779",
+      "application_id": "1565181939458113547",
+      "version": "1567653185315676286",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "autoresponse",
+      "description": "Automatic replies when a message contains a trigger",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "add",
+          "description": "Add or update an auto response",
+          "options": [
+            {
+              "type": 3,
+              "name": "trigger",
+              "description": "Text that triggers the reply",
+              "required": true,
+              "min_length": 2,
+              "max_length": 100
+            },
+            {
+              "type": 3,
+              "name": "response",
+              "description": "The reply. Variables: {user} {username} {server}",
+              "required": true,
+              "max_length": 2000
+            },
+            {
+              "type": 3,
+              "name": "match",
+              "description": "How the trigger is matched (default: contains)",
+              "choices": [
+                {
+                  "name": "Contains the word(s)",
+                  "value": "contains"
+                },
+                {
+                  "name": "Is exactly",
+                  "value": "exact"
+                },
+                {
+                  "name": "Starts with",
+                  "value": "startswith"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Remove an auto response",
+          "options": [
+            {
+              "type": 3,
+              "name": "trigger",
+              "description": "Trigger",
+              "required": true,
+              "max_length": 100
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "list",
+          "description": "List auto responses"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184481005780",
+      "application_id": "1565181939458113547",
+      "version": "1567653185315676287",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "config",
+      "description": "Server settings and feature switches",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "show",
+          "description": "Show every feature and whether it is on"
+        },
+        {
+          "type": 1,
+          "name": "toggle",
+          "description": "Turn a feature on or off",
+          "options": [
+            {
+              "type": 3,
+              "name": "feature",
+              "description": "Feature",
+              "required": true,
+              "choices": [
+                {
+                  "name": "Welcome messages",
+                  "value": "welcome"
+                },
+                {
+                  "name": "Goodbye messages",
+                  "value": "goodbye"
+                },
+                {
+                  "name": "Auto roles on join",
+                  "value": "autoroles"
+                },
+                {
+                  "name": "Leveling & XP",
+                  "value": "leveling"
+                },
+                {
+                  "name": "Auto-moderation",
+                  "value": "automod"
+                },
+                {
+                  "name": "Logging",
+                  "value": "logging"
+                },
+                {
+                  "name": "Tickets",
+                  "value": "tickets"
+                },
+                {
+                  "name": "Suggestions",
+                  "value": "suggestions"
+                },
+                {
+                  "name": "Giveaways",
+                  "value": "giveaways"
+                },
+                {
+                  "name": "Custom commands",
+                  "value": "customcommands"
+                },
+                {
+                  "name": "Auto responses",
+                  "value": "autoresponses"
+                },
+                {
+                  "name": "Member count channel",
+                  "value": "membercount"
+                }
+              ]
+            },
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "prefix",
+          "description": "Change the prefix for text commands",
+          "options": [
+            {
+              "type": 3,
+              "name": "prefix",
+              "description": "New prefix (default v!)",
+              "required": true,
+              "max_length": 5
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "moderation-dm",
+          "description": "DM members when they are warned, timed out, kicked or banned",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On or off",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "reset",
+          "description": "Reset ALL bot settings for this server (keeps XP, warnings, cases)"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184481005782",
+      "application_id": "1565181939458113547",
+      "version": "1567653185315676288",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "customcommand",
+      "description": "Create text commands like v!rules",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "add",
+          "description": "Create or update a custom command",
+          "options": [
+            {
+              "type": 3,
+              "name": "name",
+              "description": "Command name, e.g. rules",
+              "required": true,
+              "max_length": 32
+            },
+            {
+              "type": 3,
+              "name": "response",
+              "description": "What the bot replies. Variables: {user} {username} {server} {memberCount}",
+              "required": true,
+              "max_length": 2000
+            },
+            {
+              "type": 5,
+              "name": "embed",
+              "description": "Reply inside an embed"
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Delete a custom command",
+          "options": [
+            {
+              "type": 3,
+              "name": "name",
+              "description": "Command name",
+              "required": true,
+              "max_length": 32
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "list",
+          "description": "List custom commands"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184481005784",
+      "application_id": "1565181939458113547",
+      "version": "1567653185315676289",
+      "default_member_permissions": "8192",
+      "type": 1,
+      "name": "embed",
+      "description": "Create and post a custom embed (opens a form)",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Where to post it (default: here)",
+          "channel_types": [
+            0,
+            5
+          ]
+        },
+        {
+          "type": 3,
+          "name": "color",
+          "description": "Color, e.g. #7c5cff",
+          "max_length": 7
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184481005786",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547026",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "membercount",
+      "description": "A channel whose name shows the member count",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "setup",
+          "description": "Use (or create) a channel for the member count",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Voice channel to rename (leave empty to create one)",
+              "channel_types": [
+                2
+              ]
+            },
+            {
+              "type": 3,
+              "name": "format",
+              "description": "Name format, {count} = members (default: 👥 Members: {count})",
+              "max_length": 90
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "disable",
+          "description": "Stop updating the member count channel"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184481005787",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547027",
+      "default_member_permissions": "268435456",
+      "type": 1,
+      "name": "rolepanel",
+      "description": "Self-assignable roles with buttons, reactions or a menu",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "create",
+          "description": "Create a new role panel",
+          "options": [
+            {
+              "type": 3,
+              "name": "type",
+              "description": "How members pick roles",
+              "required": true,
+              "choices": [
+                {
+                  "name": "Buttons",
+                  "value": "button"
+                },
+                {
+                  "name": "Reactions",
+                  "value": "reaction"
+                },
+                {
+                  "name": "Select menu",
+                  "value": "select"
+                }
+              ]
+            },
+            {
+              "type": 3,
+              "name": "title",
+              "description": "Panel title",
+              "required": true,
+              "max_length": 200
+            },
+            {
+              "type": 3,
+              "name": "description",
+              "description": "Text above the roles",
+              "max_length": 1000
+            },
+            {
+              "type": 3,
+              "name": "mode",
+              "description": "Rules (default: toggle)",
+              "choices": [
+                {
+                  "name": "Toggle (add and remove)",
+                  "value": "toggle"
+                },
+                {
+                  "name": "Unique (only one role)",
+                  "value": "unique"
+                },
+                {
+                  "name": "Add only (verify)",
+                  "value": "add"
+                }
+              ]
+            },
+            {
+              "type": 8,
+              "name": "required_role",
+              "description": "Members need this role to use the panel"
+            },
+            {
+              "type": 3,
+              "name": "color",
+              "description": "Color, e.g. #7c5cff",
+              "max_length": 7
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "add",
+          "description": "Add a role to a panel",
+          "options": [
+            {
+              "type": 4,
+              "name": "panel",
+              "description": "Panel ID (from /rolepanel list)",
+              "required": true,
+              "min_value": 1
+            },
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            },
+            {
+              "type": 3,
+              "name": "emoji",
+              "description": "Emoji (required for reaction panels)",
+              "max_length": 64
+            },
+            {
+              "type": 3,
+              "name": "label",
+              "description": "Button / menu text (default: role name)",
+              "max_length": 80
+            },
+            {
+              "type": 3,
+              "name": "description",
+              "description": "Short description shown on the panel",
+              "max_length": 100
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Remove a role from a panel",
+          "options": [
+            {
+              "type": 4,
+              "name": "panel",
+              "description": "Panel ID (from /rolepanel list)",
+              "required": true,
+              "min_value": 1
+            },
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "send",
+          "description": "Post (or update) a panel in a channel",
+          "options": [
+            {
+              "type": 4,
+              "name": "panel",
+              "description": "Panel ID (from /rolepanel list)",
+              "required": true,
+              "min_value": 1
+            },
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel (default: here)",
+              "channel_types": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "delete",
+          "description": "Delete a panel and its message",
+          "options": [
+            {
+              "type": 4,
+              "name": "panel",
+              "description": "Panel ID (from /rolepanel list)",
+              "required": true,
+              "min_value": 1
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "list",
+          "description": "List role panels"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742026",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547029",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "8ball",
+      "description": "Ask the magic 8-ball a question",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 3,
+          "name": "question",
+          "description": "Your question",
+          "required": true,
+          "max_length": 300
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742027",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547030",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "coinflip",
+      "description": "Flip a coin",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742028",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547031",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "dice",
+      "description": "Roll dice",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 4,
+          "name": "sides",
+          "description": "Sides per die (2-1000, default 6)",
+          "min_value": 2,
+          "max_value": 1000
+        },
+        {
+          "type": 4,
+          "name": "count",
+          "description": "How many dice (1-20, default 1)",
+          "min_value": 1,
+          "max_value": 20
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742029",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547032",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "hug",
+      "description": "Give someone a hug",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Who?",
+          "required": true
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742030",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547033",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "kiss",
+      "description": "Kiss someone",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Who?",
+          "required": true
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742031",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547034",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "meme",
+      "description": "A random meme from Reddit",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742032",
+      "application_id": "1565181939458113547",
+      "version": "1567653185504547035",
+      "default_member_permissions": "562949953421312",
+      "type": 1,
+      "name": "poll",
+      "description": "Create a Discord poll",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 3,
+          "name": "question",
+          "description": "The question",
+          "required": true,
+          "max_length": 300
+        },
+        {
+          "type": 3,
+          "name": "answers",
+          "description": "Answers separated by | e.g. Pizza | Burger | Sushi (2-10)",
+          "required": true,
+          "max_length": 600
+        },
+        {
+          "type": 4,
+          "name": "hours",
+          "description": "How long it runs (1-768 hours, default 24)",
+          "min_value": 1,
+          "max_value": 768
+        },
+        {
+          "type": 5,
+          "name": "multiple",
+          "description": "Allow picking several answers"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742033",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421719",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "ship",
+      "description": "How compatible are two people?",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "First person",
+          "required": true
+        },
+        {
+          "type": 6,
+          "name": "user2",
+          "description": "Second person (default: you)"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742034",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421720",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "slap",
+      "description": "Slap someone (playfully!)",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Who?",
+          "required": true
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653184774742035",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421721",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "giveaway",
+      "description": "Run giveaways",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "start",
+          "description": "Start a giveaway",
+          "options": [
+            {
+              "type": 3,
+              "name": "duration",
+              "description": "How long, e.g. 30m, 1d, 1w (1 minute to 4 weeks)",
+              "required": true,
+              "max_length": 20
+            },
+            {
+              "type": 4,
+              "name": "winners",
+              "description": "Number of winners (1-20)",
+              "required": true,
+              "min_value": 1,
+              "max_value": 20
+            },
+            {
+              "type": 3,
+              "name": "prize",
+              "description": "What can be won",
+              "required": true,
+              "max_length": 200
+            },
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel (default: this one)",
+              "channel_types": [
+                0,
+                5
+              ]
+            },
+            {
+              "type": 8,
+              "name": "required_role",
+              "description": "Only members with this role can enter"
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "end",
+          "description": "End a giveaway now",
+          "options": [
+            {
+              "type": 4,
+              "name": "id",
+              "description": "Giveaway number (shown in its footer or /giveaway list)",
+              "required": true,
+              "min_value": 1
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "reroll",
+          "description": "Pick new winners for an ended giveaway",
+          "options": [
+            {
+              "type": 4,
+              "name": "id",
+              "description": "Giveaway number (shown in its footer or /giveaway list)",
+              "required": true,
+              "min_value": 1
+            },
+            {
+              "type": 4,
+              "name": "winners",
+              "description": "How many new winners (default: same as before)",
+              "min_value": 1,
+              "max_value": 20
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "delete",
+          "description": "Delete a giveaway without picking winners",
+          "options": [
+            {
+              "type": 4,
+              "name": "id",
+              "description": "Giveaway number (shown in its footer or /giveaway list)",
+              "required": true,
+              "min_value": 1
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "list",
+          "description": "Show running giveaways"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284499",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421722",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "level",
+      "description": "Configure the leveling system",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "settings",
+          "description": "Show the leveling settings and rewards"
+        },
+        {
+          "type": 1,
+          "name": "channel",
+          "description": "Where level-up messages are posted",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Leave empty to post where the member chatted",
+              "channel_types": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "message",
+          "description": "Level-up message",
+          "options": [
+            {
+              "type": 3,
+              "name": "text",
+              "description": "Variables: {user} {username} {level} {server}",
+              "required": true,
+              "max_length": 1000
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "xp",
+          "description": "XP per message, cooldown and multiplier",
+          "options": [
+            {
+              "type": 4,
+              "name": "min",
+              "description": "Minimum XP per message (1-500)",
+              "min_value": 1,
+              "max_value": 500
+            },
+            {
+              "type": 4,
+              "name": "max",
+              "description": "Maximum XP per message (1-500)",
+              "min_value": 1,
+              "max_value": 500
+            },
+            {
+              "type": 4,
+              "name": "cooldown",
+              "description": "Seconds between XP gains (0-3600)",
+              "min_value": 0,
+              "max_value": 3600
+            },
+            {
+              "type": 10,
+              "name": "multiplier",
+              "description": "XP multiplier, e.g. 2 for double XP (0.1-10)",
+              "min_value": 0.1,
+              "max_value": 10
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "reward-add",
+          "description": "Give a role when members reach a level",
+          "options": [
+            {
+              "type": 4,
+              "name": "level",
+              "description": "Level",
+              "required": true,
+              "min_value": 1,
+              "max_value": 500
+            },
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "reward-remove",
+          "description": "Remove a level reward",
+          "options": [
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "stack",
+          "description": "Keep lower reward roles when getting a new one?",
+          "options": [
+            {
+              "type": 5,
+              "name": "enabled",
+              "description": "On = keep all rewards",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "no-xp",
+          "description": "Stop (or allow) XP in a channel or for a role",
+          "options": [
+            {
+              "type": 3,
+              "name": "mode",
+              "description": "Add or remove",
+              "required": true,
+              "choices": [
+                {
+                  "name": "Add (no XP)",
+                  "value": "add"
+                },
+                {
+                  "name": "Remove (give XP again)",
+                  "value": "remove"
+                }
+              ]
+            },
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel or category",
+              "channel_types": [
+                0,
+                2,
+                4,
+                15
+              ]
+            },
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role"
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "card",
+          "description": "Rank card look",
+          "options": [
+            {
+              "type": 3,
+              "name": "color",
+              "description": "Accent color, e.g. #7c5cff",
+              "max_length": 7
+            },
+            {
+              "type": 3,
+              "name": "background",
+              "description": "Background image link (https://…) or \"none\"",
+              "max_length": 500
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284500",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421724",
+      "default_member_permissions": "32",
+      "type": 1,
+      "name": "xp",
+      "description": "Manage members' XP",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "add",
+          "description": "Give XP",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            },
+            {
+              "type": 4,
+              "name": "amount",
+              "description": "XP",
+              "required": true,
+              "min_value": 1,
+              "max_value": 1000000
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Take XP away",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            },
+            {
+              "type": 4,
+              "name": "amount",
+              "description": "XP",
+              "required": true,
+              "min_value": 1,
+              "max_value": 1000000
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "set-level",
+          "description": "Set a level",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            },
+            {
+              "type": 4,
+              "name": "level",
+              "description": "Level",
+              "required": true,
+              "min_value": 0,
+              "max_value": 500
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "reset",
+          "description": "Reset a member's XP",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "reset-all",
+          "description": "Reset the XP of EVERY member"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284501",
+      "application_id": "1565181939458113547",
+      "version": "1567653185693421727",
+      "default_member_permissions": "16",
+      "type": 1,
+      "name": "hide",
+      "description": "Hide a channel from @everyone",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel to hide (default: this one)",
+          "channel_types": [
+            0,
+            2,
+            5,
+            15
+          ]
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284502",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763734",
+      "default_member_permissions": "1099511627776",
+      "type": 1,
+      "name": "modlogs",
+      "description": "Show the moderation history of a user",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "User",
+          "required": true
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284503",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763735",
+      "default_member_permissions": "134217728",
+      "type": 1,
+      "name": "nick",
+      "description": "Change or reset a member's nickname",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "nickname",
+          "description": "New nickname (leave empty to reset)",
+          "max_length": 32
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284504",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763736",
+      "default_member_permissions": "8192",
+      "type": 1,
+      "name": "purge",
+      "description": "Delete specific messages among the latest 100",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "user",
+          "description": "Delete a member's messages",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            },
+            {
+              "type": 4,
+              "name": "amount",
+              "description": "How many messages to check (1-100)",
+              "required": true,
+              "min_value": 1,
+              "max_value": 100
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "bots",
+          "description": "Delete messages from bots",
+          "options": [
+            {
+              "type": 4,
+              "name": "amount",
+              "description": "How many messages to check (1-100)",
+              "required": true,
+              "min_value": 1,
+              "max_value": 100
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "links",
+          "description": "Delete messages containing links",
+          "options": [
+            {
+              "type": 4,
+              "name": "amount",
+              "description": "How many messages to check (1-100)",
+              "required": true,
+              "min_value": 1,
+              "max_value": 100
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "attachments",
+          "description": "Delete messages with files or images",
+          "options": [
+            {
+              "type": 4,
+              "name": "amount",
+              "description": "How many messages to check (1-100)",
+              "required": true,
+              "min_value": 1,
+              "max_value": 100
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "contains",
+          "description": "Delete messages containing some text",
+          "options": [
+            {
+              "type": 3,
+              "name": "text",
+              "description": "Text to look for",
+              "required": true,
+              "max_length": 100
+            },
+            {
+              "type": 4,
+              "name": "amount",
+              "description": "How many messages to check (1-100)",
+              "required": true,
+              "min_value": 1,
+              "max_value": 100
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284505",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763737",
+      "default_member_permissions": "268435456",
+      "type": 1,
+      "name": "role",
+      "description": "Give or remove a role",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "add",
+          "description": "Give a role to a member",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            },
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "remove",
+          "description": "Remove a role from a member",
+          "options": [
+            {
+              "type": 6,
+              "name": "user",
+              "description": "Member",
+              "required": true
+            },
+            {
+              "type": 8,
+              "name": "role",
+              "description": "Role",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284506",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763738",
+      "default_member_permissions": "16",
+      "type": 1,
+      "name": "slowmode",
+      "description": "Set the slowmode of a channel",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 3,
+          "name": "duration",
+          "description": "e.g. 5s, 30s, 2m, 1h (max 6h) or \"off\"",
+          "required": true,
+          "max_length": 10
+        },
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel (default: this one)",
+          "channel_types": [
+            0,
+            2,
+            15
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284507",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763739",
+      "default_member_permissions": "4",
+      "type": 1,
+      "name": "softban",
+      "description": "Ban and immediately unban a member to delete their recent messages",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "Member",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        },
+        {
+          "type": 4,
+          "name": "delete_days",
+          "description": "Delete messages from the last 1-7 days (default 1)",
+          "min_value": 1,
+          "max_value": 7
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185156284508",
+      "application_id": "1565181939458113547",
+      "version": "1567653185789763742",
+      "default_member_permissions": "16",
+      "type": 1,
+      "name": "unhide",
+      "description": "Make a hidden channel visible again",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 7,
+          "name": "channel",
+          "description": "Channel to unhide (default: this one)",
+          "channel_types": [
+            0,
+            2,
+            5,
+            15
+          ]
+        },
+        {
+          "type": 3,
+          "name": "reason",
+          "description": "Reason",
+          "max_length": 400
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185315676281",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578303",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "suggest",
+      "description": "Send a suggestion to the server",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 3,
+          "name": "idea",
+          "description": "Your suggestion",
+          "required": true,
+          "min_length": 10,
+          "max_length": 1500
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185315676282",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578304",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "suggestion",
+      "description": "Manage suggestions",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 1,
+          "name": "setup",
+          "description": "Choose the suggestions channel (admins)",
+          "options": [
+            {
+              "type": 7,
+              "name": "channel",
+              "description": "Channel",
+              "required": true,
+              "channel_types": [
+                0
+              ]
+            },
+            {
+              "type": 8,
+              "name": "staff_role",
+              "description": "Role that can approve / reject (besides Manage Server)"
+            }
+          ]
+        },
+        {
+          "type": 1,
+          "name": "review",
+          "description": "Approve, reject, consider or mark a suggestion as implemented (staff)",
+          "options": [
+            {
+              "type": 4,
+              "name": "number",
+              "description": "Suggestion number",
+              "required": true,
+              "min_value": 1
+            },
+            {
+              "type": 3,
+              "name": "status",
+              "description": "New status",
+              "required": true,
+              "choices": [
+                {
+                  "name": "Approved",
+                  "value": "approved"
+                },
+                {
+                  "name": "Rejected",
+                  "value": "rejected"
+                },
+                {
+                  "name": "Under consideration",
+                  "value": "considered"
+                },
+                {
+                  "name": "Implemented",
+                  "value": "implemented"
+                },
+                {
+                  "name": "Pending",
+                  "value": "pending"
+                }
+              ]
+            },
+            {
+              "type": 3,
+              "name": "response",
+              "description": "Response shown on the suggestion",
+              "max_length": 1000
+            }
+          ]
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185315676283",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578306",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "banner",
+      "description": "Show a user's profile banner",
+      "dm_permission": true,
+      "contexts": null,
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 6,
+          "name": "user",
+          "description": "User (default: you)"
+        }
+      ],
+      "nsfw": false
+    },
+    {
+      "id": "1567653185315676284",
+      "application_id": "1565181939458113547",
+      "version": "1567653185869578308",
+      "default_member_permissions": null,
+      "type": 1,
+      "name": "serverstats",
+      "description": "Joins, leaves and messages over the last days",
+      "dm_permission": false,
+      "contexts": [
+        0
+      ],
+      "integration_types": [
+        0,
+        1
+      ],
+      "options": [
+        {
+          "type": 4,
+          "name": "days",
+          "description": "How many days (1-30, default 7)",
+          "min_value": 1,
+          "max_value": 30
+        }
+      ],
+      "nsfw": false
+    }
+  ]
+}

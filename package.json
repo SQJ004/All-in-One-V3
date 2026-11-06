@@ -1,0 +1,46 @@
+{
+  "name": "vortex-bot",
+  "version": "1.0.0",
+  "description": "VORTEX - Protect. Manage. Dominate. All-in-one Discord security and management bot with web dashboard.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "dashboard:preview": "tsx tests/preview/dashboard-preview.ts",
+    "prestart": "npm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "@discordjs/voice": "^0.19.2",
+    "@fontsource/inter": "^5.3.0",
+    "@napi-rs/canvas": "^1.1.0",
+    "cron-parser": "^5.10.3",
+    "discord.js": "^14.28.1",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.3",
+    "ffmpeg-static": "^5.3.0",
+    "helmet": "^8.3.0",
+    "opusscript": "0.0.8",
+    "pino": "^10.4.0",
+    "safe-regex2": "^5.1.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/supertest": "^7.2.1",
+    "pino-pretty": "^13.2.0",
+    "supertest": "^7.3.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}
