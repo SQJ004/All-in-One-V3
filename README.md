@@ -1,155 +1,202 @@
-# 🚀 All-In-One Discord Bot
+<h1 align="center">Zytheron</h1>
 
 <p align="center">
-  <img src="images/banner.png" alt="Bot Banner" width="800">
+  <img src="images/banner.png" alt="Zytheron banner" width="800">
 </p>
 
 <p align="center">
-  <b>A powerful all-in-one Discord bot built to make server management easier, smarter, and more enjoyable.</b>
+  <b>A self-hosted, all-in-one Discord bot for security, moderation, community and music, with a web dashboard.</b>
 </p>
 
 <p align="center">
-  ![Discord](https://img.shields.io/badge/Discord-Bot-5865F2?logo=discord)
-  ![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-yellow?logo=javascript)
-  ![Status](https://img.shields.io/badge/Status-Active-success)
-  ![License](https://img.shields.io/badge/License-MIT-blue)
+  <img src="https://img.shields.io/badge/node-%3E%3D20.11-339933?logo=node.js&logoColor=white" alt="Node.js 20.11 or newer">
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" alt="TypeScript 5.9">
+  <img src="https://img.shields.io/badge/discord.js-v14-5865F2?logo=discord&logoColor=white" alt="discord.js v14">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license">
 </p>
 
----
+Zytheron brings 54 slash commands (187 including subcommands) and a web dashboard together in one bot. It needs no database server, because data is saved as JSON files, and only one setting is required to start: your bot token.
 
-## 📖 About
+## Contents
 
-All-In-One Discord Bot is a multifunctional Discord bot designed to provide everything a Discord server needs in one place. It combines server management, moderation, security, entertainment, and automation into a single powerful solution.
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Quick start](#quick-start)
+- [Configuration](#configuration)
+- [Commands](#commands)
+- [Development](#development)
+- [Project status](#project-status)
+- [License](#license)
 
-With a modern web dashboard and customizable systems, server administrators can easily manage their communities while providing members with a smooth and enjoyable experience.
+## Features
 
-Our goal is simple: one bot, multiple possibilities, and complete control over your Discord server.
+| Area | What it does | Commands |
+|---|---|---|
+| **Security** | Action limits, raid detection, account age rules, whitelists, lockdown and automod filters | `/security`, `/automod` |
+| **Moderation** | Bans, tempbans, kicks, timeouts, warnings, jail, purge, channel locks, notes and history | `/moderation`, `/modconfig` |
+| **Logging** | Log categories that can each go to their own channel | `/logs` |
+| **Welcome** | Welcome messages for new members | `/welcome` |
+| **Roles** | Role panels, auto roles, temporary roles and self roles | `/rolepanel`, `/autorole`, `/temprole`, `/selfrole` |
+| **Tickets** | Ticket panels with claim, close, reopen and stats | `/ticket` |
+| **Automation** | Custom commands, auto responses, scheduled messages and rules | `/cc`, `/autoresponse`, `/schedule`, `/rule` |
+| **Embeds** | Create, preview, edit and delete embeds, with a builder | `/embed` |
+| **Levels** | XP, ranks, leaderboards and level rewards | `/level` |
+| **Engagement** | Giveaways, polls, suggestions and a starboard | `/giveaway`, `/poll`, `/suggest`, `/suggestions`, `/starboard` |
+| **Members** | Invite tracking, server stats, birthdays, AFK, challenges and profiles | `/invites`, `/serverstats`, `/birthday`, `/afk`, `/challenge`, `/profile` |
+| **Music** | Playback, queue controls, lyrics and YouTube Watch Together | `/play`, `/queue`, `/lyrics`, `/youtube` and more |
+| **Utility** | User and server info, avatars, dice rolls and more | `/user`, `/server`, `/avatar`, `/roles`, `/roll`, `/moveme` |
+| **Dashboard** | Manage your server from a website after signing in with Discord | |
+| **AI moderation** | Optional message classification, which needs an Anthropic API key | |
 
-## ✨ Features
+See the full list, with every option and required permission, in the [command checklist](docs/COMMAND_CHECKLIST.md).
 
-- 🛡️ Advanced Moderation System
-- 🔒 Anti-Raid & Anti-Spam Protection
-- 🎵 Music System
-- 🎫 Ticket System
-- 💰 Economy System
-- 📈 Leveling & XP System
-- 🎉 Giveaway System
-- 👋 Welcome & Goodbye Messages
-- 🤖 Custom Commands
-- 📊 Server Statistics
-- 📝 Logging System
-- 🌐 Modern Web Dashboard
-- ⚙️ Customizable Server Settings
+## Screenshots
 
-## 🌐 Website Dashboard
-
-Manage your Discord server using our web dashboard.
-
-**Website:** [Your Website URL]
+### Dashboard
 
 ![Dashboard](images/dashboard.png)
 
-![ZETHERON](images/zytheron.png)
+![Zytheron](images/zytheron.png)
 
-## 📸 Screenshots
+### Moderation
 
-### Moderation System
 ![Moderation](images/moderation.png)
 
-### Music System
+### Music
+
 ![Music](images/music.png)
 
-### Ticket System
+### Tickets
+
 ![Tickets](images/tickets.png)
 
-## 🛠️ Technologies
+## Quick start
 
-- JavaScript / Node.js
-- Discord.js
-- HTML / CSS / JavaScript
-- MongoDB (if configured)
-- [Other technologies]
+You need [Node.js](https://nodejs.org) 20.11 or newer.
 
-## 📥 Installation
+### 1. Create the bot
 
-**1. Clone the repository**
+1. Open the [Discord Developer Portal](https://discord.com/developers/applications) and create an application.
+2. On the **Bot** tab, click **Reset Token** and copy the token.
+3. On the same tab, turn on **Server Members Intent** and **Message Content Intent**.
 
-```bash
-git clone [YOUR_REPOSITORY_URL]
-```
+> [!WARNING]
+> Your token gives full control of the bot. Never share or commit it. If it leaks, reset it straight away.
 
-**2. Enter the project folder**
+### 2. Install
 
-```bash
-cd [PROJECT_FOLDER]
-```
-
-**3. Install dependencies**
+Clone this repository (or download the ZIP) and open the folder in a terminal, then run:
 
 ```bash
 npm install
 ```
 
-**4. Configure environment variables**
+### 3. Add your token
 
-Create a `.env` file:
+Copy the example settings to a new `.env` file:
 
-```env
-DISCORD_TOKEN=YOUR_BOT_TOKEN
-CLIENT_ID=YOUR_CLIENT_ID
-GUILD_ID=YOUR_GUILD_ID
+```bash
+# macOS / Linux
+cp .env.example .env
+
+# Windows (PowerShell)
+Copy-Item .env.example .env
 ```
 
-**5. Start the bot**
+Then fill in `DISCORD_TOKEN` in `.env`.
+
+### 4. Start the bot
 
 ```bash
 npm start
 ```
 
-## ⚙️ Configuration
+This builds the project and starts the bot. If the bot isn't in any servers yet, the console prints an invite link.
 
-Before starting the bot, make sure to:
+After you add the bot, move its role above the roles and members it should manage, then run `/setup` to see what's still missing.
 
-- Create an application in the Discord Developer Portal.
-- Enable the required Gateway Intents.
-- Add your bot token to the `.env` file.
-- Configure the required permissions.
-- Set up the website dashboard if available.
+> [!NOTE]
+> Zytheron won't overwrite slash commands registered by another bot on the same application. Use a new application, or see `REPLACE_COMMANDS` below.
 
-## 💻 Commands
+## Configuration
 
-| Command | Description |
+Only `DISCORD_TOKEN` is required. [`.env.example`](.env.example) lists and explains every setting.
+
+| Setting | What it does |
 |---|---|
-| `/help` | Display all commands |
-| `/ping` | Check bot latency |
-| `/ban` | Ban a member |
-| `/kick` | Kick a member |
-| `/mute` | Mute a member |
-| `/clear` | Clear messages |
-| `/play` | Play music |
+| `DISCORD_TOKEN` | Your bot token (required) |
+| `DISCORD_CLIENT_SECRET` | Turns on the website |
+| `DASHBOARD_URL`, `DASHBOARD_PORT` | Where the website runs (default `http://localhost:3000`) |
+| `SUPPORT_URL` | Your Discord invite, for the homepage buttons |
+| `YOUTUBE_API_KEY` | `/youtube` search and YouTube links in `/play` |
+| `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` | Spotify links in `/play` (the app owner needs Premium) |
+| `ANTHROPIC_API_KEY` | AI moderation |
+| `DEV_GUILD_ID` | Registers commands instantly in one test server |
+| `REPLACE_COMMANDS` | Set to `true` to replace another bot's commands on this application |
+| `DATA_DIR` | Where data is saved (default `./data`) |
 
-*Commands may vary depending on your implementation.*
+### Turning on the website
 
-## 🤝 Contributing
+1. Copy the **Client Secret** from **OAuth2** in the Developer Portal into `DISCORD_CLIENT_SECRET`.
+2. On that same page, add `<DASHBOARD_URL>/auth/callback` as a redirect.
+3. If you run behind one reverse proxy, set `TRUST_PROXY=1`.
 
-Contributions, suggestions, and bug reports are welcome! Feel free to fork this repository and submit a pull request.
+### Music
 
-## 📜 License
+`/play` works with no accounts or API keys: search uses Audius and lyrics use LRCLIB.
 
-This project is licensed under the MIT License.
+### Your data
 
-## 💬 Support
+Settings and data are saved as JSON files in `data/`, which git ignores. To back up, copy that folder while the bot is stopped.
 
-Need help or have a suggestion?
+## Commands
 
-- Discord Server: [Your Support Server]
-- Website: [Your Website]
-- GitHub Issues: [Your Repository Issues]
+Most setup starts with `/setup`, which shows what's missing. Some common commands:
 
----
+| Command | What it does |
+|---|---|
+| `/help` | List commands |
+| `/ping` | Check the bot's response time |
+| `/setup` | Show what's still missing |
+| `/moderation ban`, `kick`, `timeout`, `warn`, `purge` | Moderate members and messages |
+| `/security setup` | Set up protection and its log channel |
+| `/ticket setup` | Set up tickets |
+| `/level rank` | Show a member's rank |
+| `/giveaway create` | Start a giveaway |
+| `/play` | Play music in your voice channel |
 
-<p align="center">
-  **Made with ❤️ for the Discord Community**
-  
-  <b>One Bot. One Dashboard. Everything Your Server Needs.</b>
-</p>
+Many commands can also be typed with the `v!` prefix.
+
+## Development
+
+```bash
+npm run dev                # run with reload on change
+npm run typecheck          # check types
+npm test                   # run the automated tests
+npm run build              # compile to dist/
+npm run dashboard:preview  # preview the dashboard with sample data
+```
+
+The 1,717 automated tests use a fake Discord, so they don't need a token or a connection.
+
+```
+src/
+├── index.ts     # startup
+├── config/      # settings and per-server configuration
+├── core/        # commands, permissions, scheduling, shared code
+├── dashboard/   # website API, sign-in and gateway
+├── db/          # JSON file storage
+├── modules/     # one folder per feature
+└── ui/          # shared theme
+public/          # website files
+tests/           # automated tests
+docs/            # command checklist
+```
+
+## Project status
+
+Every command passes automated tests against a fake Discord, but a fake can't prove real Discord accepts every message or action. The [command checklist](docs/COMMAND_CHECKLIST.md) tracks which commands have also been confirmed on real Discord, and most haven't been ticked yet. Try moderation and security commands on a test server or an alt account first.
+
+## License
+
+[MIT](LICENSE) © 2026 Trascovitsh. Not affiliated with Discord.
